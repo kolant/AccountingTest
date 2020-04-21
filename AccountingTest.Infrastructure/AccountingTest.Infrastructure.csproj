@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\AccountingTest.Common\AccountingTest.Common.csproj" />
+        <ProjectReference Include="..\AccountingTest.Domain\AccountingTest.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

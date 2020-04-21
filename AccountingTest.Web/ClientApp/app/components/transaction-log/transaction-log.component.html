@@ -1,0 +1,26 @@
+<h1>Transaction History</h1>
+<div *ngIf="accountModel">
+    <b>Balance Amount: {{accountModel.balanceValue}} $</b>
+</div>
+<p *ngIf="!transactions.length">There are no transactions yet...</p>
+<table class='table' *ngIf="transactions.length">
+    <thead>
+    <tr>
+        <th>Date and time</th>
+        <th>Type</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.effectiveDate | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
+        <td>
+            <span class="label label-{{getLabelClassByType(transaction.type)}}">{{ transactionType[transaction.type] }}</span>
+        </td>
+        <td>{{ transaction.amount }}</td>
+    </tr>
+    </tbody>
+    
+</table>
+<button class="btn btn-primary" (click)="refresh()">Refresh</button>
+<p *ngIf="serverError" class="danger">{{serverError}}</p>
